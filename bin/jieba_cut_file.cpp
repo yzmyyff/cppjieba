@@ -5,7 +5,7 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
-  if (argc != 4){
+  if (argc != 5){
     cout << "jieba_cut_file cppjieba user_dict in_file out_file" << endl;
   }
 
