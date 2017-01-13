@@ -3,21 +3,25 @@
 #include "cppjieba/Jieba.hpp"
 using namespace std;
 
-const string JIEBA_PATH = "/home/rukuang/github/cppjieba/";
-const string DICT_PATH = JIEBA_PATH + "dict/jieba.dict.utf8";
-const string HMM_PATH = JIEBA_PATH + "dict/hmm_model.utf8";
-const string IDF_PATH = JIEBA_PATH + "dict/idf.utf8";
-const string STOP_WORD_PATH = JIEBA_PATH + "dict/stop_words.utf8";
 
 int main(int argc, char** argv) {
-  user_dict_path = argv[1]
+  if (argc != 4){
+    cout << "jieba_cut_file cppjieba user_dict in_file out_file" << endl;
+  }
 
-  cppjieba::Jieba jieba(DICT_PATH, HMM_PATH,
-		  user_dict_path, IDF_PATH, STOP_WORD_PATH);
+  const string jieba_path(argv[1]);
+  const string dict_path = jieba_path + "dict/jieba.dict.utf8";
+  const string hmm_path = jieba_path + "dict/hmm_model.utf8";
+  const string idf_path = jieba_path + "dict/idf.utf8";
+  const string stopword_path = jieba_path + "dict/stop_words.utf8";
+  const string user_dict_path(argv[2]);
+
+  cppjieba::Jieba jieba(dict_path, hmm_path,
+		  user_dict_path, idf_path, stopword_path);
 
   vector<string> words;
-  ifstream in("/home/rukuang/data/novels.sent");
-  ofstream out("/home/rukuang/data/novels.only_cut_word");
+  ifstream in(argv[3]);
+  ofstream out(argv[4]);
   string line;
   int num_line = 0;
 
