@@ -26,3 +26,6 @@ ENABLE_TESTING()
 ADD_TEST(NAME ./test/test.run COMMAND ./test/test.run)
 ADD_TEST(NAME ./load_test COMMAND ./load_test)
 ADD_TEST(NAME ./demo COMMAND ./demo)
+
+# 编译bin中的命令行工具
+ADD_EXECUTABLE(jieba_cut_file ./bin/jieba_cut_file.cpp)
