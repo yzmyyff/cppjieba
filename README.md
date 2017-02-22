@@ -1,6 +1,6 @@
 主要是增加了bin目录, 里面有对文件的分词脚本.
 
-#compile
+#编译
 ```bash
 cd cppjieba
 mkdir build
