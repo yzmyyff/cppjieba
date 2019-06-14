@@ -4,6 +4,7 @@
 ```bash
 cd cppjieba
 mkdir build
+cd build
 cmake ..
 make
 ```
